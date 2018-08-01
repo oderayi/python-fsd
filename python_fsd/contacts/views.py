@@ -31,10 +31,10 @@ def create(request):
     form = ContactForm(request.POST)
     if form.is_valid():
       contact = form.save(commit=False)
-      contact.name = request.name
-      contact.email = request.email
+      contact.name = request.POST.name
+      contact.email = request.POST.email
       contact.save()
-      return redirect('details', id=post.pk)
+      return redirect('details', id=contact.pk)
   else:
     form = ContactForm()
 
