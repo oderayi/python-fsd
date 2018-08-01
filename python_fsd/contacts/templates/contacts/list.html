@@ -1,11 +1,10 @@
 {% extends 'contacts/layout.html' %} {% block content %}
 <h3 class="center-align red lighten-3">{{title}}</h3>
 <ul class="collection">
+  {% for contact in contacts %}
   <li class="collection-item">
-    <a href="{% url 'contacts' %}">Contacts list</a>
+    <a href="/contacts/details/{{contact.id}}">{{contact.name}}</a>
   </li>
-  <li class="collection-item">
-    <a href="{% url 'create' %}">Add new contact</a>
-  </li>
+  {% endfor %}
 </ul>
 {% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'contacts/layout.html' %} {% block content %}
+<form method="POST" class="post-form">{% csrf_token %}
+  <div class="card">
+    <div class="card-content">
+      <h3>{{title}}</h3>
+      {{form.as_p}}
+      <div class="card-action">
+        <button type="submit" class="btn">Save</button>
+      </div>
+
+    </div>
+  </div>
+</form>
+<a href="/contacts/" class="btn">Go Back</a>
+{% endblock %}
