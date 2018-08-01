@@ -1,0 +1,12 @@
+{% extends 'contacts/layout.html' %} {% block content %}
+<h3 class="center-align red lighten-3">{{contact.name}}</h3>
+<div class="card">
+  <div class="card-content">
+    {{contact.email}}
+  </div>
+  <div class="card-action">
+    {{contact.created_at}}
+  </div>
+</div>  
+<a href="/contacts/" class="btn">Go Back</a>     
+{% endblock %}
